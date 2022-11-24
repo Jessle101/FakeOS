@@ -1,0 +1,17 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneDimensions {
+  height: 960px;
+  width: 640px;
+  margin: 0;
+  border: 2px solid black;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/wallpapers/default-wallpaper.png);
+}
