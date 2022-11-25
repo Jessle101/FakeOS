@@ -1,17 +1,54 @@
+@use "./partials/devices";
+
 .body {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.phoneDimensions {
-  height: 960px;
-  width: 640px;
+.main {
   margin: 0;
-  border: 2px solid black;
+  border: 10px solid black;
   border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  height: 750px;
+  width: 450px;
+}
+
+.body {
+  @include devices.laptop {
+    padding-top: 150px;
+  }
+}
+
+.body {
+  @include devices.laptop-sml {
+    padding-top: 150px;
+  }
+}
+
+.body {
+  @include devices.tablet-landscape {
+    padding-top: 150px;
+  }
+}
+
+.body {
+  @include devices.tablet {
+    padding-top: 150px;
+  }
+}
+
+#iphoneBase {
+  height: 750px;
+  width: 450px;
+}
+
+#wallpaper {
+  border: 2px solid black;
   background-image: url(./assets/wallpapers/default-wallpaper.png);
+  padding: 20px;
 }
