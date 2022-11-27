@@ -1,54 +1,91 @@
 @use "./partials/devices";
+@import "./partials/typography";
 
 .body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: grey;
 }
 
 .main {
   margin: 0;
-  border: 10px solid black;
+  // border: 10px solid black;
   border-radius: 25px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  height: 750px;
-  width: 450px;
-}
+  height: 686px;
+  width: 350px;
+  background-image: url(./assets/wallpapers/wallpaper-default.png);
 
-.body {
-  @include devices.laptop {
-    padding-top: 150px;
+  &__apps {
+    // border: 2px solid green;
+    height: 300px;
+    display: grid;
+    /* each column should be the same width */
+    grid-template-columns: 1fr 1fr 1fr;
+    // grid-auto-rows: 1fr;
+    /* each column should have some space between them */
+    grid-gap: 20px;
+    margin-top: 150px;
+    margin-right: 40px;
+
+    & > a > img {
+      width: 75px;
+      height: 75px;
+
+      &:hover {
+        transform: scale(105%);
+      }
+    }
   }
 }
 
-.body {
-  @include devices.laptop-sml {
-    padding-top: 150px;
+// .apps {
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-end;
+//   &__labels {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     border: 4px solid black;
+//   }
+// }
+
+.main {
+  @include devices.phone {
+    &__apps {
+      margin-right: 40px;
+    }
   }
 }
 
-.body {
-  @include devices.tablet-landscape {
-    padding-top: 150px;
-  }
-}
+// .body {
+//   @include devices.laptop {
+//     padding-top: 150px;
+//   }
+// }
 
-.body {
-  @include devices.tablet {
-    padding-top: 150px;
-  }
-}
+// .body {
+//   @include devices.laptop-sml {
+//     padding-top: 150px;
+//   }
+// }
+
+// .body {
+//   @include devices.tablet-landscape {
+//     padding-top: 150px;
+//   }
+// }
+
+// .body {
+//   @include devices.tablet {
+//     padding-top: 150px;
+//   }
+// }
 
 #iphoneBase {
   height: 750px;
-  width: 450px;
-}
-
-#wallpaper {
-  border: 2px solid black;
-  background-image: url(./assets/wallpapers/default-wallpaper.png);
-  padding: 20px;
+  width: 383px;
 }
