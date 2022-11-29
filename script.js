@@ -1,5 +1,16 @@
 // vwallpaper variables
 let defBg = "url(./assets/apps/backgrounds/default-app-background.png)";
+let storeBg = "url(./assets/apps/backgrounds/app-store/store-bg.png)";
+let messagesBg = "url(./assets/apps/backgrounds/messages/messages-bg.png)";
+let photosBg = "url(./assets/apps/backgrounds/photos/photos-bg.png)";
+let photosBg2 = "url(./assets/apps/backgrounds/photos/photos-bg2.png)";
+let notesBg = "url(./assets/apps/backgrounds/notes/notes-bg.png)";
+let safariBg = "url(./assets/apps/backgrounds/safari/safari-bg.png)";
+let musicBg = "url(./assets/apps/backgrounds/music/music-bg.png)";
+let calculatorBg =
+    "url(./assets/apps/backgrounds/calculator/calculator-bg.png)";
+let youtubeBg = "url(./assets/apps/backgrounds/youtube/youtube-bg.png)";
+let settingsBg = "url(./assets/apps/backgrounds/settings/settings-bg.png)";
 let selectedWallpaper = "url(./assets/wallpapers/wallpaper-default.png)";
 const homeWallpaper = selectedWallpaper;
 
@@ -8,111 +19,94 @@ let goHome = 0;
 
 // defining app-variables
 const main = document.querySelector(".main");
-console.log(main);
-console.dir(main);
-
-const apps = document.querySelector(".main__apps");
-console.log(apps);
-console.dir(apps);
-
-const appStore = document.querySelector("#app-store");
-console.log(appStore);
-console.dir(appStore);
-
-const messages = document.querySelector("#messages");
-console.log(messages);
-console.dir(messages);
-
-const photos = document.querySelector("#photos");
-console.log(photos);
-console.dir(photos);
-
-const notes = document.querySelector("#notes");
-console.log(notes);
-console.dir(notes);
-
-const safari = document.querySelector("#safari");
-console.log(safari);
-console.dir(safari);
-
-const music = document.querySelector("#music");
-console.log(music);
-console.dir(music);
-
-const calculator = document.querySelector("#calculator");
-console.log(calculator);
-console.dir(calculator);
-
-const youtube = document.querySelector("#youtube");
-console.log(youtube);
-console.dir(youtube);
-
-const settings = document.querySelector("#settings");
-console.log(settings);
-console.dir(settings);
-
+const apps = document.querySelector(".appsList");
 const phoneButton = document.querySelector("#phoneButton");
-console.log(phoneButton);
-console.dir(phoneButton);
+const progCon = document.querySelector(".programs__container");
 
-// app click functionalities
-appStore.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
+const appArr = document.querySelectorAll(".app");
+console.log(appArr);
 
-messages.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
+appArr.forEach((app) =>
+    app.addEventListener("click", function () {
+        apps.style.transform = "scale(0%)";
+        let id = app.getAttribute("id");
+        const backgroundSrc = `url(./assets/apps/backgrounds/${id}/${id}-bg.png)`;
+        main.style.backgroundImage = backgroundSrc;
+        // progCon.style.transform = "scale(100%)";
+        goHome = 1;
+    }),
+);
 
-photos.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
-notes.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
+// // app click functionalities
+// appStore.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = storeBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-safari.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
+// messages.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = messagesBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-music.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
+// photos.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = photosBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-calculator.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
+// notes.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = notesBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-youtube.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
+// safari.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = safariBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-settings.addEventListener("click", function () {
-  apps.classList.toggle("hideHomeScreen");
-  main.style.backgroundImage = defBg;
-  goHome = 1;
-});
+// music.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = musicBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
+
+// calculator.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = calculatorBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
+
+// youtube.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = youtubeBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
+
+// settings.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = settingsBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
 phoneButton.addEventListener("click", function () {
-  if (goHome === 1) {
-    apps.classList.toggle("hideHomeScreen");
-    main.style.backgroundImage = homeWallpaper;
-    goHome = 0;
-  }
+    if (goHome === 1) {
+        apps.style.transform = "scale(100%)";
+        main.style.backgroundImage = homeWallpaper;
+
+        // progCon.style.transform = "scale(0%)";
+        goHome = 0;
+    }
 });
