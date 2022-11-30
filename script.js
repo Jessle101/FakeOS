@@ -24,94 +24,87 @@ let goHome = 0;
 
 // defining app-variables
 const main = document.querySelector(".main");
-
 const apps = document.querySelector(".appsList");
-
-const appStore = document.querySelector("#app-store");
-
-const messages = document.querySelector("#messages");
-
-const photos = document.querySelector("#photos");
-
-const notes = document.querySelector("#notes");
-
-const safari = document.querySelector("#safari");
-
-const music = document.querySelector("#music");
-
-const calculator = document.querySelector("#calculator");
-
-const youtube = document.querySelector("#youtube");
-
-const settings = document.querySelector("#settings");
-
 const phoneButton = document.querySelector("#phoneButton");
-
 const progCon = document.querySelector(".programs__container");
 
-// app click functionalities
-appStore.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = storeBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+const appArr = document.querySelectorAll(".app");
+console.log(appArr);
 
-messages.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = messagesBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+appArr.forEach((app) =>
+  app.addEventListener("click", function () {
+    apps.style.transform = "scale(0%)";
+    let id = app.getAttribute("id");
+    const backgroundSrc = `url(./assets/apps/backgrounds/${id}/${id}-bg.png)`;
+    main.style.backgroundImage = backgroundSrc;
+    // progCon.style.transform = "scale(100%)";
+    goHome = 1;
+  })
+);
 
-photos.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = photosBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+// // app click functionalities
+// appStore.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = storeBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-notes.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = notesBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+// messages.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = messagesBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-safari.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = safariBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+// photos.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = photosBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-music.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = musicBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+// notes.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = notesBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-calculator.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = calculatorBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+// safari.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = safariBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-youtube.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = youtubeBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+// music.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = musicBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
-settings.addEventListener("click", function () {
-  apps.style.transform = "scale(0%)";
-  main.style.backgroundImage = settingsBg;
-  // progCon.style.transform = "scale(100%)";
-  goHome = 1;
-});
+// calculator.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = calculatorBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
+
+// youtube.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = youtubeBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
+
+// settings.addEventListener("click", function () {
+//     apps.style.transform = "scale(0%)";
+//     main.style.backgroundImage = settingsBg;
+//     // progCon.style.transform = "scale(100%)";
+//     goHome = 1;
+// });
 
 phoneButton.addEventListener("click", function () {
   if (goHome === 1) {
